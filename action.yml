@@ -40,7 +40,7 @@ inputs:
     description: "Comma separated list of release rules. Format: `<keyword>:<release_type>`. Example: `hotfix:patch,pre-feat:preminor`."
     required: false
   release_branches:
-    description: "Comma separated list of branches (bash reg exp accepted) that will generate the release tags. Other branches and pull-requests generate versions postfixed with the commit hash and do not generate any tag. Examples: `master` or `.*` or `release.*,hotfix.*,master`..."
+    description: "Comma separated list of branches (bash reg exp accepted) that will generate the release tags. Other branches and pull-requests generate versions postfixed with the commit hash and do not generate any tag."
     required: false
     default: "master,main"
   pre_release_branches:
@@ -63,7 +63,7 @@ inputs:
     default: "false"
 
 runs:
-  using: "node20"
+  using: "node24"
   main: "lib/main.js"
 branding:
   icon: "git-merge"
